@@ -1,0 +1,86 @@
+/* Universal Selector */
+* {
+  color: gray;
+  box-sizing: border-box; /* Best Practice - it will take the specified width as it is, padding, margin, border will not be considered*/
+}
+/* Element Selector */
+table
+{
+  border: 1px solid;
+}
+/* Element Selector */
+#main-table
+{
+  background-color: lightgray;
+}
+/* Class Selector */
+.table-header
+{
+  background-color: darkgray;
+}
+/* Group Selector */
+h1, h2 {
+  color: blue;
+}
+/* Descendent Selector -> no matter how deep the element is to the parent, it will reflect */
+div p {
+  color: red;
+}
+/* Child Selector -> all the direct child to parent will reflect, if ul -> li, then all li, but if ul -> li -> a, then it will not reflect */
+ul > li
+{
+  color: yellow;
+}
+/* Adjacent Sibling Selector -> next element only right after the selector <here, h2>, will reflect, no other than that first article */
+h2 + article
+{
+  font-style: italic;
+  border: solid 1px red;
+}
+/* General Sibling Selector - next all the elements after the selector <here, h2>, will reflect, all articles next to h2 */
+h2 ~ article
+{
+  text-decoration: underline;
+}
+/* Pseudo-class:hover - Styles element on mouse hover*/
+ul > li > a:hover
+{
+  font-weight: bold;
+  color: blue;
+}
+/* Pseudo-class: :nth-child(n) - reflect given (n) child element, here 2 th of thead*/
+.table-header > tr > th:nth-child(2)
+{
+  background-color: red;
+}
+/* Pseudo-class: :not(selector) - Selects everything except .active, here it will apply all the properties to all td except the td has a class active*/
+tbody > tr > td:not(.active)
+{
+  color: white;
+  background-color: black;
+}
+/* Pseudo-element: ::before - Inserts content before element */
+.note::before
+{
+  content: "⚠️ ";
+  color: red;
+  font-weight: bold;
+}
+/* Pseudo-element: ::after - Inserts content after element */
+.note::after
+{
+  content: " ✔️";
+  color: green;
+}
+/* Pseudo-element: ::first-letter - Styles the first letter of a paragraph */
+.intro::first-letter {
+  font-size: 200%;
+  color: blue;
+  font-weight: bold;
+}
+/* Pseudo-element: ::placeholder - Styles the placeholder text */
+#firstname::placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 0.7;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .block {
+        display: block;
+        background: lightcoral;
+        width: 200px;
+        height: 50px;
+        position: sticky;
+        top: 0;
+    }
+
+    .inline {
+        display: inline;
+        background: lightgreen;
+        width: 200px; /* won't work */
+        height: 50px; /* won't work */
+    }
+
+    .inline-block {
+        display: inline-block;
+        background: lightblue;
+        width: 200px;
+        height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Block</h3> <!--It will take the entire space of the row, though you can adjust with width and heigh-->
+  <div class="block">Block Element</div>
+
+  <h3>Inline</h3><!--each element side by side, it will ignore width and height property -->
+  <span class="inline">Inline Element</span>
+  <span class="inline">Inline Element</span>
+
+  <h3>Inline-Block</h3><!--each element side by side, but accept width and height property -->
+  <span class="inline-block">Inline-Block</span>
+  <span class="inline-block">Inline-Block</span>
+
+</body>
+</html>

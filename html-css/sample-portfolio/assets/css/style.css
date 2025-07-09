@@ -1,0 +1,231 @@
+html, body
+{
+    height: auto;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+.container
+{
+    display: grid;
+    grid-template-areas: "header header"
+                         "sidebar content"
+                         "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container > * {
+  padding: 20px;
+}
+.header
+{
+    grid-area: header;
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    font-size: 1rem;
+}
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: #EBEBEB;
+    height: 100%;
+}
+.nav > li
+{
+    list-style: none;
+    padding: 5px 0;
+}
+.nav > li > a
+{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+}
+.nav > li > a:hover
+{
+    color: #fff;
+    background-color: #000;
+    padding: 5px;
+
+}
+.content
+{
+    grid-area: content;
+    height: 100%;
+    padding: 0 20px;
+    min-height: 500px;
+    overflow: auto;
+}
+.content section {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+.footer
+{
+    grid-area: footer;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* Contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.contact-form button {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form button:hover {
+    background-color: #333;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Project */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    flex: 1 1 300px;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.content h1 {
+    animation: bounce-in 0.8s ease-in-out;
+    width: calc(100px - 80px);
+    border: solid 1px red;
+}
+
+/* custom scrollbar css starts */
+.projects-scroll-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+  
+  /* Firefox */
+  scrollbar-width: 100px;
+  scrollbar-color: #000 #f0f0f0;
+}
+
+/* Chrome, Edge, Safari */
+.projects-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projects-scroll-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.projects-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.projects-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #008ba3;
+}
+/* custom scrollbar css ends */
+
+/* Keyframes */
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* media queries */
+@media (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+    .container {
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none;
+    }
+    .project-grid {
+        justify-content: center;
+    }
+    .project-card {
+        max-width: 260px;
+        flex: 1 1 260px;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+    .container > * {
+        padding: 10px;
+    }
+    .project-grid {
+        justify-content: center;
+    }
+    .project-card {
+        max-width: 300px;
+        flex: 1 1 300px;
+    }
+}
