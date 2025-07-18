@@ -38,7 +38,7 @@ html, body
 {
     grid-area: sidebar;
     background-color: #EBEBEB;
-    height: 100%;
+    height: -webkit-fill-available;
 }
 .nav > li
 {
@@ -139,8 +139,7 @@ html, body
 
 .content h1 {
     animation: bounce-in 0.8s ease-in-out;
-    width: calc(100px - 80px);
-    border: solid 1px red;
+    width: calc(100% - 80px);
 }
 
 /* custom scrollbar css starts */
