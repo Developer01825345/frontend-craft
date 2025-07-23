@@ -51,3 +51,38 @@ window.onclick = function(e){
         modal.style.display = "none";
     }
 }
+
+function fetchProjects() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const projects = ['Project 1', 'Project 2', 'Project 3'];
+      if (projects.length === 0) {
+        reject(new Error("No projects available."));
+      } else {
+        resolve(projects);
+      }
+    }, 2000);
+  });
+}
+
+async function loadProjects() {
+  console.log("Fetching portfolio projects...");
+
+  try {
+    const projects = await fetchProjects();
+
+    if (projects.length === 0) {
+      throw new Error("No projects found.");
+    }
+
+    projects.forEach((project) => {
+      console.log(project);
+    });
+
+    console.log("All projects loaded!");
+  } catch (error) {
+    console.error("Error loading projects:", error.message);
+  }
+}
+
+loadProjects();
