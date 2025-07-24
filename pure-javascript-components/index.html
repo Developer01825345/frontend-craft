@@ -5,10 +5,80 @@
     <title>Pure JS Component</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Welcome</h1>
+                <button id="theme-toggle" style="float: right;" aria-label="Toggle theme">🌓</button>
+            </div>
+        </header>
 
-    <script type="module" src="main.js"></script>
-    <link rel="stylesheet" href="assets/css/modal.css">
-    <link rel="stylesheet" href="assets/css/tab.css">
+        <nav class="sidebar">
+            <ul class="nav">
+                <li><a href="tabs.html">Tabs</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="accordian.html">Accordian</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="hero">
+                <h1>Pure JavaScript Component</h1>
+                <div>Geolocation API</div>
+                <button id="getLocation">Get My Location</button>
+                <div>Clipboard API</div>
+                <input type="text" id="clipboardinput">
+                <button id="clipboardcopy">Copy Text</button>
+                <button id="clipboardpaste">Paste Text</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div>
+                <p>&copy; 2025 Adam. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("getLocation").addEventListener("click", () => {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        console.log(`Latitude: ${position.coords.latitude}`);
+                        console.log(`Longitude: ${position.coords.longitude}`);
+                        console.log(`Accuracy: ${position.coords.accuracy} meters`);
+                    },
+                    (error) => {
+                        console.error("Error getting location:", error.message);
+                    }
+                );
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        });
+
+        document.getElementById("clipboardcopy").addEventListener("click", () => {
+            let inputElement = document.getElementById("clipboardinput");
+            
+            navigator.clipboard.writeText(inputElement.value)
+                .then(() => {
+                    console.log("Text copied to clipboard!");
+                })
+                .catch(err => {
+                    console.error("Failed to copy: ", err);
+                });
+        });
+
+        document.getElementById("clipboardpaste").addEventListener("click", () => {
+            navigator.clipboard.readText()
+            .then(text => {
+                console.log("Pasted text: ", text);
+            })
+            .catch(err => {
+                console.error("Failed to read clipboard: ", err);
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </body>
 </html>

@@ -1,5 +1,5 @@
-import Card from "./components/Card.js";
-import Modal from "./components/Modal.js";
+import Card from "../../components/Card.js";
+import Modal from "../../components/Modal.js";
 
 const modal = new Modal();
 
@@ -8,4 +8,4 @@ const cards = [
     new Card("Card 2", "Brief description of the project 2.", () => modal.open("Card 2")),
 ];
 
-cards.forEach(card => card.render("#app"));
+cards.forEach(card => card.render("#cards"));
