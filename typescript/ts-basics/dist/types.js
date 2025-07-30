@@ -13,4 +13,19 @@ var userRoles;
 })(userRoles || (userRoles = {}));
 const getUserRoles = userRoles.Admin;
 let productId = 101;
+let shirtSize = "small";
+//Type Assertion (Type Casting)
+let assertionString = "Testing Assertion Type";
+let assertionStringLength = assertionString.length;
+console.log(assertionStringLength);
+let containerData = {
+    "email": "developer@gmail.com",
+    "address": "developer address",
+    "age": 20
+};
+let user = { name: "John", age: 30 };
+console.log((function (obj, key) {
+    return [obj.age, key];
+})(user, "name"));
+console.log(containerData);
 console.table([firstName, phoneNumber, isLoggedIn, nullChecking, newArray, newTuple, getUserRoles, productId]);
