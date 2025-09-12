@@ -37,3 +37,9 @@ let student = {
     address: address
 };
 console.table([product, student]);
+console.log((function (price) {
+    if (typeof price === "string") {
+        return `price is ${parseFloat(price) * 2}`;
+    }
+    return price * 2;
+})("10.00"));

@@ -27,5 +27,9 @@ let user = { name: "John", age: 30 };
 console.log((function (obj, key) {
     return [obj.age, key];
 })(user, "name"));
+let userIn = {
+    name: "Developer",
+    age: 20
+};
 console.log(containerData);
 console.table([firstName, phoneNumber, isLoggedIn, nullChecking, newArray, newTuple, getUserRoles, productId]);

@@ -15,7 +15,7 @@ enum userRoles
 const getUserRoles: userRoles = userRoles.Admin;
 
 //Type Aliases for Union type
-type Id = string | number;
+type Id = string | number | boolean;
 let productId: Id = 101;
 
 // Literal Types
