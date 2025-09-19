@@ -1,0 +1,39 @@
+body{
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+header
+{
+    height: 200px;    
+}
+
+header div
+{
+    text-align: center;}
+
+header h1
+{
+    color:#FF2BAB;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3.5;
+}
+
+.btn
+{
+    background-color: #FF2BAB;
+    border: #FF2BAB;
+}
+
+section
+{
+    background-color: #EEEEEE;
+    min-height: 400px;
+}
+
+footer
+{
+    height: 50px;
+}
